@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `customer` (
+  `kd_pelanggan` varchar(20) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  `tanggal_beli` date DEFAULT NULL,
+  `jenis_kelamin` enum('Pria','Wanita') DEFAULT NULL,
+  `telp` varchar(13) DEFAULT NULL,
+  `rumah_kd` int(11) DEFAULT NULL,
+  PRIMARY KEY (`kd_pelanggan`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES ('00100','Maryuni','2022-12-20','Wanita','0866126357',100102),('00101','Slamet','2022-12-01','Pria','0829398123',100101),('00102','Dadang','2022-12-14','Pria','0872883717',100103);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `rumah`
 --
 
@@ -28,7 +56,7 @@ CREATE TABLE `rumah` (
   `lokasi_rumah` varchar(150) NOT NULL,
   `harga` int(11) NOT NULL,
   PRIMARY KEY (`kd_rumah`)
-) ENGINE=InnoDB AUTO_INCREMENT=100105 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=100106 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +65,7 @@ CREATE TABLE `rumah` (
 
 LOCK TABLES `rumah` WRITE;
 /*!40000 ALTER TABLE `rumah` DISABLE KEYS */;
-INSERT INTO `rumah` VALUES (100101,'Tipe 36','Jl. Komplek Mutrada',100000000),(100102,'Tipe 45','Jl. Komplek Mekar',170000000),(100103,'Tipe 60','Jl. Komplek Mid Katredal',400000000);
+INSERT INTO `rumah` VALUES (100101,'Tipe 36','Komplek Mutrada',100000000),(100102,'Tipe 45','Komplek Mekar',170000000),(100103,'Tipe 60','Komplek Mid Katredal',400000000),(100105,'Tipe 62','',0);
 /*!40000 ALTER TABLE `rumah` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +78,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-18 23:00:18
+-- Dump completed on 2023-01-09 12:42:50
